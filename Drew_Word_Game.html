@@ -1,0 +1,144 @@
+<!--
+ Copyright © 2022-226 Ryan Armstrong and Emma Burkett
+ http://www.ryanarmstrongportfolio.wordpress.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, includimng without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRIGEMENT. IN NO EVENT SHALL THE
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+In Essence, if you enjoy the game it's your own fault :)
+
+All variables are fictional; any resemblance to actual variables in scope or out of scope is purely coincidental
+ -->
+<html>
+<head>
+    <title>Drew Word Game programmed by T.H.E. and Emma Burkett</title>
+    <style>
+        /*1440 X 2560 pixels is the size of the average smart phone screen
+                    BUT the viewport is listed as 480 X 853
+        Start at 5:45AM. Yep... 5:45AM.
+                */
+        body {
+            /*overflow-wrap: anywhere;*/
+            margin: 0;
+            padding: 0;
+        }
+
+        strong {
+            text-decoration: underline;
+        }
+
+        #example {
+            border: .15em solid black;
+        }
+
+        #show_answer {
+            border: .15em solid black;
+            min-width: fit-content;
+            background-color: #DDDDFF;
+        }
+        
+        #grid{
+            display: grid;
+            position:absolute;
+            margin-left:18%;
+            width:70%;
+
+        }                      
+
+        #next_to_notes {        
+            text-align: center;
+        }
+
+        textarea {
+            max-width: 100%;
+            align-content: center;
+            text-align: center;
+            position:absolute;
+            float:left;
+        }
+
+        #everything_else {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items:center;
+            text-align:center;
+        }
+        
+        section{
+            grid-column: 1/ span 1;
+        }
+
+        #record_guess{
+            grid-column:1/ span 1;
+            grid-row:2/ span 1;
+            max-width:29%;
+        }
+        #btn {
+            grid-column: 2/ span 1;
+            grid-column: 1/ span 1;
+            grid-row: 3/ span 1;
+            max-width: 29%;
+        }      
+        .same_height{
+            margin:.1%;
+            min-width:100%;
+        }
+  
+
+
+    </style>
+    <script src="Drew_Word_Game.js"></script>
+</head>
+<body>
+    <h1>Hi! Here are the rules:</h1>
+    <ol>
+        <li>Type a Word</li>
+        <li>The Word Cannot Have any Repeating Letters</li>
+        <li>Click the button called 'Next Guess'</li>
+        <li>
+            The number in the 'Wrong' Column Represents any letters
+            from the Guessed Word that are in the Answer, but in the Wrong Place
+        </li>
+        <li>
+            The number in the 'Right' Column Represents any letters
+            from the Guessed Word that are in the Answer, and in the Right Place
+        </li>
+    </ol>
+    <div id="example">Example:<img src="EX_ROAST.png"></div>
+    <div id="show_answer"><strong>Answer: </strong></div>
+            <textarea id="jot_notes">Worksheet Area:
+_ _ _ _ _
+ 
+Letters In Word:
+
+
+Letters Not In Word:
+
+ </textarea>
+    <div id="grid">
+        <div id="everything_else">
+            <strong>Your Guess</strong>
+            
+
+            <strong>Wrong</strong>
+
+            <strong>Right</strong>
+        </div>
+       <input id="record_guess" type="text">
+       <button type="button" id="btn" value="Next Guess">Next Guess</button>
+        
+        </div>
+
+
+</body>
+</html>
